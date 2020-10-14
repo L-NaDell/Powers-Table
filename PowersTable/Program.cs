@@ -15,40 +15,43 @@ namespace PowersTable
                 Console.Write("Enter an integer:");
                 int number = int.Parse(Console.ReadLine());
 
-                int i = 1;
-
-                Console.WriteLine("");
-                Console.WriteLine("Number   Squared     Cubed");
-                Console.WriteLine("======   =======     ======");
-                for (i = 1; i <= number; i++)
+                //only run if a positive number was entered
+                if (number > 0)     
                 {
-                double square = Squared(i);
-                double cubed = Cubed(i);
+                    int i = 1;
 
-                    Console.WriteLine($"   {i}       {square}         {cubed}");
+                    Console.WriteLine("Number\tSquared\tCubed");      
+                    Console.WriteLine("======\t=======\t======");
+                    for (i = 1; i <= number; i++)
+                    {
+                        //store methods as variable
+                        double square = Squared(i);   
+                        double cubed = Cubed(i);
+
+                        Console.WriteLine($"{i}\t{square}\t{cubed}");     
+                    }
+                    Console.Write("Continue? (y/n)"); 
+                    again = Console.ReadLine();
                 }
-
-                Console.Write("Continue? (y/n)");
-                again = Console.ReadLine();
+                //number was not positive
+                else
+                    Console.WriteLine($"{number} is not valad.");   
             }
-            while (again.ToLower() == "y");
+            while (again.ToLower() == "y"); 
 
             Console.WriteLine("Goodbye!");
-
         }
-        public static double Squared(int number)
+
+        //square method
+        public static double Squared(int number)    
         {
-            return (
-
-                Math.Pow(number, 2)
-                    );
-
-            
+            return Math.Pow(number, 2);
         }
-        public static double Cubed(int number)
+
+        //cube method
+        public static double Cubed(int number)      
         {
-            return(
-                Math.Pow(number, 3));
+            return Math.Pow(number, 3);
         }
     }
 }
