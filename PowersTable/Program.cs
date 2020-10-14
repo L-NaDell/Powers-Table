@@ -18,11 +18,9 @@ namespace PowersTable
                 //only run if a positive number was entered
                 if (number > 0)     
                 {
-                    int i = 1;
-
                     Console.WriteLine("Number\tSquared\tCubed");      
                     Console.WriteLine("======\t=======\t======");
-                    for (i = 1; i <= number; i++)
+                    for (int i = 1; i <= number; i++)
                     {
                         //store methods as variable
                         double square = Squared(i);   
